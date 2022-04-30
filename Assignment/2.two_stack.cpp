@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 
-class Stack {
+class DualStack {
     private:
         int *arr;
         const int MAX = 100;
         int c1, c2;
     public:
-        Stack() {
+        DualStack() {
             arr = new int[MAX];
             c1 = -1;
             c2 = MAX;
@@ -59,7 +59,7 @@ class Stack {
 };
 
 int main() {
-    Stack s;
+    DualStack s;
     for(int i = 0, j = 10; i < 5; ++i, --j) {
         s.pushFirst(i);
         s.pushSecond(j);

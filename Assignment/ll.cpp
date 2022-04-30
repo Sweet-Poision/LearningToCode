@@ -67,7 +67,7 @@ class LinkedList {
         }
 
         // function to remove data from list at any position (first position is 1)
-        void remove(int index) {
+        void removeAt(int index) {
             // if(index > this->size()) {
                 // IllegalArgumentException
             // }
@@ -115,26 +115,26 @@ class LinkedList {
             }
             return count;
         }
-
-        // funciton to count elements in the linked list using recursion
-        int countRecursively(Node * temp, int i) {
-            if(temp == NULL) return i;
-            return countRecursively(temp->next, i+1);
+    void get(int n) {
+        Node * temp = head;
+        try {
+            if(n > this->size()) 
+                throw n;
+            
+            for(int i = 1; i < n; i++) {
+                temp = temp->next;
+            }
+            cout << temp->data;
+        }
+        catch(int ex) {
+            cout << "IllegalArguementException";
         }
         
-        int size_recur() {
-            return countRecursively(head, 0);
-        }
+    }
 };
 
 int main() {
     LinkedList ll;
     for(int i = 0; i < 5; i++) ll.push(5);
-    // list -> 1 2 3 4 5
-
-    // size using iteration
-    cout << "size of list Using Iteration: " << ll.size() <<endl;
-    // size using iteration
-    cout << "size of list Using Recursion: " << ll.size_recur() <<endl;
-
+    ll.get(11);
 }
