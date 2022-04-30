@@ -58,6 +58,6 @@ void checkExpress(const string &str) {
 
 int main() {
     // works only with ideal expressions
-    string expression = "4312 3 1 * + 9 -";
+    string expression = "2 5 3 6 + * * 5 / 2 -";
     checkExpress(expression);
 }
